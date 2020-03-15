@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
+  "engines": {
+    "node": "8"
+  },
   "scripts": {
     "compile": "babel 'src' --out-dir 'dist' --source-maps",
     "watch": "npm run compile --watch",
@@ -22,13 +25,18 @@
   "homepage": "https://github.com/Utahjezz/EpicGamesTgBot#readme",
   "dependencies": {
     "firebase-admin": "^8.10.0",
-    "firebase-functions": "^3.3.0"
+    "firebase-functions": "^3.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node-telegram-bot-api": "^0.40.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "firebase-tools": "^7.15.0",
+    "babel-plugin-async-to-promises": "^1.0.5",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-flow": "^6.23.0"
+    "babel-preset-flow": "^6.23.0",
+    "firebase-tools": "^7.15.0",
+    "flow-bin": "^0.120.1"
   }
 }
