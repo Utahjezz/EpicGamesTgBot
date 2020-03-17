@@ -6,6 +6,5 @@
       }
     }],
     ["flow"]
-  ],
-  "plugins": ["async-to-promises"],
+  ]
 }

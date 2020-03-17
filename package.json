@@ -7,7 +7,8 @@
     "node": "8"
   },
   "scripts": {
-    "compile": "babel 'src' --out-dir 'dist' --source-maps",
+    "syncpublic": "cp -r src/public dist/public",
+    "compile": "npm run syncpublic && babel 'src' --out-dir 'dist' --source-maps",
     "watch": "npm run compile --watch",
     "serve": "npm run watch && firebase serve --only functions",
     "predeploy": "npm run compile",
@@ -28,7 +29,8 @@
     "firebase-functions": "^3.3.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "node-telegram-bot-api": "^0.40.0"
+    "node-telegram-bot-api": "^0.40.0",
+    "epicgames-client": "^2.0.22"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
