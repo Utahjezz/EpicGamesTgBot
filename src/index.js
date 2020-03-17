@@ -11,7 +11,7 @@ function checkTgMessage(request) {
         && request.body.message.from.first_name;
 }
 
-const bot = new TelegramBot("");
+const bot = new TelegramBot(functions.config().tg_bot.token);
 
 
 app.post('/helloworld', async (req, res) => {
