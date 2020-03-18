@@ -7,7 +7,7 @@
     "node": "8"
   },
   "scripts": {
-    "syncpublic": "cp -r src/public dist/public",
+    "syncpublic": "mkdir -p dist/public && cp -r src/public dist/public",
     "compile": "npm run syncpublic && babel 'src' --out-dir 'dist' --source-maps",
     "watch": "npm run compile --watch",
     "serve": "npm run watch && firebase serve --only functions",

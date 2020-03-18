@@ -39,15 +39,17 @@ const client = new epicgames.Launcher({
     email: "<>",
     password: "<>"
 });
+const clientReadyPromise = prepareEGClient(client);
 
 app.get('/send', async (req, res) => {
     try {
-        await prepareEGClient(client);
+        await clientReadyPromise;
         console.log(`Logged in as ${client.account.name} (${client.account.id})`);
         let all = await getAllOffers(`epic`);
         console.log(all);
+        res.status(200).send(all.slice(0, 10));
     } catch (e) {
-        console.error(e);
+        res.status(501);
     }
 });
 // app.post('/send', async (req, res) => {
